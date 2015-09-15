@@ -29,4 +29,4 @@ while getopts ":v:i:" opt; do
   esac
 done
 
-$FPM -s dir -t rpm -a noarch -n mapr-fixconfigs -v $rpm_version --iteration $rpm_iteration --prefix /opt/mapr-fixconfigs --config-files /etc/mapr-fixconfigs.conf --rpm-user mapr --rpm-group mapr --directories /opt/mapr-fixconfigs -m paul@ottoops.com -x package.sh -x ".git/**" -x "**gitignore" -x "**git" -x ".gitignore" -x ".git" mapr-fixconfigs.conf=/etc/ mapr-fixconfigs.sh
+$FPM -s dir -t rpm -a noarch --rpm-os linux -n mapr-fixconfigs -v $rpm_version --iteration $rpm_iteration --prefix /opt/mapr-fixconfigs --config-files /etc/mapr-fixconfigs.conf --rpm-user mapr --rpm-group mapr --directories /opt/mapr-fixconfigs -m paul@ottoops.com -x package.sh -x ".git/**" -x "**gitignore" -x "**git" -x ".gitignore" -x ".git" mapr-fixconfigs.conf=/etc/ mapr-fixconfigs.sh
